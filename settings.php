@@ -279,7 +279,11 @@ function cbnet_macn_validate_settings( $input ) {
 				// Validate Email Array content
 				if ( 'emailarray' == $optiondetails['sanitize'] ) {
 					// Create array
-					$input_emails = ( '' != $input[$setting] ? explode( ',', $input[$setting] ) : false );
+					if ( false == strpos( $input[$setting], ',' ) ) {
+						$input_emails = array( $input[$setting] );
+					} else {
+						$input_emails = ( '' != $input[$setting] ? explode( ',', $input[$setting] ) : false );
+					}
 					// Verify values are valid email addresses
 					if ( false != $input_emails ) {
 						foreach ( $input_emails as $email ) {

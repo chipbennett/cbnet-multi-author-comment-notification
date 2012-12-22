@@ -120,7 +120,7 @@ if ( ! function_exists( 'wp_notify_postauthor' ) ) {
 		$email_to = array( $author->user_email );
 		
 		// Add Plugin email addresses
-		$email_to = array_merge( $email_to, cbnet_macn_get_notification_email_addresses() );
+		$email_to = array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses() ) );
 		
 		// Send notification emails.
 		//

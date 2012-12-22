@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: cbnet, multi, author, comment, comments, comment notification, notification, notify, admin, administrator, email, maxblogpress
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 
 Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
 
@@ -53,6 +53,9 @@ Screenshots coming soon.
 
 == Changelog ==
 
+= 2.1.2 =
+* Bugfix. 
+ * Fixed call to deprecated function update_usermeta()
 = 2.1.1 =
 * Bugfix. 
  * Fix bug with Plugin sending multiple emails to the same email address.
@@ -88,6 +91,8 @@ Screenshots coming soon.
 
 == Upgrade Notice ==
 
+= 2.1.2 =
+Bugfix. Fixed call to deprecated function update_usermeta().
 = 2.1.1 =
 Bugfix. Fix bug with Plugin sending multiple emails to the same email address.
 = 2.1 =

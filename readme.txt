@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: cbnet, multi, author, comment, comments, comment notification, notification, notify, admin, administrator, email, maxblogpress
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1
+Stable tag: 2.1.2
 
 Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
 
@@ -53,24 +53,30 @@ Screenshots coming soon.
 
 == Changelog ==
 
+= 2.1.2 =
+* Bugfix. 
+ * Fixed call to deprecated function update_usermeta()
+= 2.1.1 =
+* Bugfix. 
+ * Fix bug with Plugin sending multiple emails to the same email address.
 = 2.1 =
 * Made Plugin translation-ready
 = 2.0.2 =
 * Bugfix
-** Fix bug with settings validation callback not accounting for single email address
+ * Fix bug with settings validation callback not accounting for single email address
 = 2.0.1 =
 * Bugfix
-** Wrap pluggable function in function_exists() conditional.
+ * Wrap pluggable function in function_exists() conditional.
 = 2.0 =
 * Major update
-** Plugin completely rewritten
-** Settings API implementation
-** Move Plugin settings from custom settings page to Settings -> Discussion
-** Add custom user meta for individual user email notification
-** Implement via pluggable function wp_notify_postauthor()
-** Made Plugin parameters filterable
-** Removed all cruft code
-** WARNING: Old settings will not be retained
+ * Plugin completely rewritten
+ * Settings API implementation
+ * Move Plugin settings from custom settings page to Settings -> Discussion
+ * Add custom user meta for individual user email notification
+ * Implement via pluggable function wp_notify_postauthor()
+ * Made Plugin parameters filterable
+ * Removed all cruft code
+* WARNING: Old settings will not be retained
 = 1.1.2 =
 * Bugfix update
 * PHP shorttag fixed on line 249. Props Otto42
@@ -85,6 +91,10 @@ Screenshots coming soon.
 
 == Upgrade Notice ==
 
+= 2.1.2 =
+Bugfix. Fixed call to deprecated function update_usermeta().
+= 2.1.1 =
+Bugfix. Fix bug with Plugin sending multiple emails to the same email address.
 = 2.1 =
 Made Plugin translation-ready
 = 2.0.2 =

@@ -3,7 +3,7 @@
  * Plugin Name:   cbnet Multi Author Comment Notification
  * Plugin URI:    http://www.chipbennett.net/wordpress/plugins/cbnet-multi-author-comment-notification/
  * Description:   Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
- * Version:       2.1
+ * Version:       2.1.2
  * Author:        chipbennett
  * Author URI:    http://www.chipbennett.net/
  *
@@ -101,7 +101,32 @@ function cbnet_macn_get_notification_email_addresses() {
 	}
 	
 	// Return array
-	return apply_filters( 'cbnet_macn_notify_email_addresses', $email_addresses );
+	return apply_filters( 'cbnet_macn_notify_email_addresses', array_unique( $email_addresses ) );
 }
+
+/**
+ * Filter array of comment notificaiton email addresses
+ */
+function cbnet_macn_filter_comment_notification_email_to( $email_to ) {	
+	global $cbnet_macn_options;
+	if ( false == $cbnet_macn_options['notify_for_registered_users'] && is_user_logged_in() ) {
+		return $email_to;
+	}
+	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses() ) );
+}
+add_filter( 'comment_notification_email_to', 'cbnet_macn_filter_comment_notification_email_to' );
+
+/**
+ * Filter array of moderation notificaiton email addresses
+ */
+function cbnet_macn_filter_comment_moderation_email_to( $email_to ) {
+	global $cbnet_macn_options;
+	if ( false == $cbnet_macn_options['notify_for_comment_moderation'] || ( true == $cbnet_macn_options['notify_for_registered_users'] && is_user_logged_in() ) ) {
+		return $email_to;
+	}
+	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses() ) );
+}
+add_filter( 'comment_moderation_email_to', 'cbnet_macn_filter_comment_moderation_email_to' );
+
 
 ?>

@@ -27,7 +27,8 @@ function cbnet_macn_get_option_defaults() {
 		'all_contributors' => false,
 		'all_subscribers' => false,
 		'additional_emails' => false,
-		'notify_for_registered_users' => true
+		'notify_for_registered_users' => true,
+		'notify_for_comment_moderation' => false
 	);
 	return apply_filters( 'cbnet_macn_option_defaults', $defaults );
 }
@@ -87,6 +88,13 @@ function cbnet_macn_get_option_parameters() {
 			'description' => __( 'Send notification emails for comments from registered users', 'cbnet_macn' ),
 			'type' => 'checkbox',
 			'default' => $defaults['notify_for_registered_users']
+		),
+		'notify_for_comment_moderation' => array(
+			'name' => 'notify_for_comment_moderation',
+			'title' => __( 'Moderated Comment Notification', 'cbnet_macn' ),
+			'description' => __( 'Send notification emails for comments held for moderation', 'cbnet_macn' ),
+			'type' => 'checkbox',
+			'default' => $defaults['notify_for_comment_moderation']
 		),
 	);
 	return apply_filters( 'cbnet_macn_option_parameters', $parameters );
@@ -194,6 +202,10 @@ function cbnet_macn_register_settings() {
 		<p>
 			<input type="checkbox" name="plugin_cbnet_macn_options[notify_for_registered_users]" value="true" <?php checked( true == $cbnet_macn_options['notify_for_registered_users'] ); ?>>
 			<?php echo $option_parameters['notify_for_registered_users']['description']; ?>
+		</p>
+		<p>
+			<input type="checkbox" name="plugin_cbnet_macn_options[notify_for_comment_moderation]" value="true" <?php checked( true == $cbnet_macn_options['notify_for_comment_moderation'] ); ?>>
+			<?php echo $option_parameters['notify_for_comment_moderation']['description']; ?>
 		</p>
 		<?php
 	}

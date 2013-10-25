@@ -57,7 +57,12 @@ include( plugin_dir_path( __FILE__ ) . 'custom-user-meta.php' );
 /**
  * Build array of notification email addresses
  */
-function cbnet_macn_get_notification_email_addresses() {
+function cbnet_macn_get_notification_email_addresses( $type = 'moderation' ) {
+
+	// Determine email type
+	$email_type = ( 'notification' == $type ? 'notification' : 'moderation' );
+	
+	// Globalize options
 	global $cbnet_macn_options;
 	
 	// Instantiate array
@@ -74,7 +79,9 @@ function cbnet_macn_get_notification_email_addresses() {
 	}
 	
 	// Add email addresses for User Roles
-	$roles = array( 'administrator', 'editor', 'author', 'contributor', 'subscriber' );
+	$moderation_roles = array( 'administrator', 'editor' );
+	$notification_roles = array( 'author', 'contributor', 'subscriber' );
+	$roles = ( 'moderation' == $type ? $moderation_roles : array_merge( $moderation_roles, $notification_roles );
 	$role_email_addresses = array();
 	foreach ( $roles as $role ) {
 		if ( true == $cbnet_macn_options['all_' . $role . 's'] ) {
@@ -107,7 +114,7 @@ function cbnet_macn_filter_comment_notification_email_to( $email_to ) {
 	if ( false == $cbnet_macn_options['notify_for_registered_users'] && is_user_logged_in() ) {
 		return $email_to;
 	}
-	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses() ) );
+	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses( 'notification' ) ) );
 }
 add_filter( 'comment_notification_recipients', 'cbnet_macn_filter_comment_notification_email_to' );
 
@@ -119,7 +126,7 @@ function cbnet_macn_filter_comment_moderation_email_to( $email_to ) {
 	if ( false == $cbnet_macn_options['notify_for_comment_moderation'] || ( true == $cbnet_macn_options['notify_for_registered_users'] && is_user_logged_in() ) ) {
 		return $email_to;
 	}
-	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses() ) );
+	return array_unique( array_merge( $email_to, cbnet_macn_get_notification_email_addresses( 'moderation' ) ) );
 }
 add_filter( 'comment_moderation_recipients', 'cbnet_macn_filter_comment_moderation_email_to' );
 

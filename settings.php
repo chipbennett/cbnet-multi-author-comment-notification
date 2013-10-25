@@ -122,7 +122,7 @@ function cbnet_macn_register_settings() {
 	 * Discussion settings section callback
 	 */
 	function cbnet_macn_settings_section() {
-		echo '<p>' . __( 'Configure cbnet Multi-Author Comment Notification settings here.', 'cbnet_macn' ) . '</p>';
+		echo '<p>' . __( 'Configure cbnet Multi-Author Comment Notification settings here. These settings will only apply if the "Email me whenever" setting is enabled for either comment notification or comment modeation.', 'cbnet_macn' ) . '</p>';
 	}
 
 	/**

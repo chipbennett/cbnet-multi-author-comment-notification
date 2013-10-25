@@ -38,6 +38,10 @@ Activiation and Use
 
 == Frequently Asked Questions ==
 
+= No emails are being sent. Why? =
+
+The Plugin merely filters the list of email recipients; it does not send email. Be sure that you have enabled (checked) the "Email me whenever" options for either "Anyone posts a comment" or "A comment is held for moderation". If neither of these options is enabled, no emails will be sent.
+
 = Where did settings go? =
 
 Plugin settings can be found under Dashboard -> Settings -> Discussion.

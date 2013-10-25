@@ -2,9 +2,9 @@
 Contributors: chipbennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: cbnet, multi, author, comment, comments, comment notification, notification, notify, admin, administrator, email, maxblogpress
-Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 2.2.1
+Requires at least: 3.7
+Tested up to: 3.7
+Stable tag: 3.0
 
 Send comment notification and comment moderation emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
 
@@ -53,6 +53,10 @@ Screenshots coming soon.
 
 == Changelog ==
 
+= 3.0 =
+* Maintenance Release
+ * Incorporates core filters 'comment_notification_recipients' added to wp_notify_postauthor() and 'comment_moderation_recipients' added to wp_notify_moderator() in WordPress 3.7
+ * Removes Pluggable functions wp_notify_postauthor() and wp_notify_moderator() that no longer need to be overwritten
 = 2.2.1 =
 * Bugfix
  * Fixed issue with bad development file merge causing PHP errors
@@ -98,6 +102,8 @@ Screenshots coming soon.
 
 == Upgrade Notice ==
 
+= 3.0 =
+Maintenance. Incorporates new core filters, and removes pluggable functions.
 = 2.2.1 =
 Bugfix. Fixed issues with bad development file merge.
 = 2.2 =

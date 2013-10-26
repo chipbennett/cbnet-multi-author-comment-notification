@@ -9,16 +9,16 @@
 
 function cbent_macn_add_user_meta_field( $user ) { ?>
 
-	<h3><?php _e( 'Comment Email Notification', 'cbnet_macn' ); ?></h3>
+	<h3><?php _e( 'Comment Email Notification', 'cbnet-multi-author-comment-notification' ); ?></h3>
 
 	<table class="form-table">
 
 		<tr>
-			<th><label for="comment_notify"><?php _e( 'Comment Email Notification', 'cbnet_macn' ); ?></label></th>
+			<th><label for="comment_notify"><?php _e( 'Comment Email Notification', 'cbnet-multi-author-comment-notification' ); ?></label></th>
 
 			<td>
 				<input type="checkbox" name="cbnet_macn_comment_notify" value="true" <?php checked( true == get_the_author_meta( 'cbnet_macn_comment_notify', $user->ID ) ); ?>>
-				<span class="description"><?php _e( 'Receive email notification of comments to all posts, regardless of post author', 'cbnet_macn' ); ?></span>
+				<span class="description"><?php _e( 'Receive email notification of comments to all posts, regardless of post author', 'cbnet-multi-author-comment-notification' ); ?></span>
 			</td>
 		</tr>
 

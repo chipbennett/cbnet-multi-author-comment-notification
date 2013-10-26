@@ -1,11 +1,13 @@
 <?php
 /*
- * Plugin Name:   cbnet Multi Author Comment Notification
- * Plugin URI:    http://www.chipbennett.net/wordpress/plugins/cbnet-multi-author-comment-notification/
- * Description:   Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
- * Version:       3.0
- * Author:        chipbennett
- * Author URI:    http://www.chipbennett.net/
+ * Plugin Name:	cbnet Multi Author Comment Notification
+ * Plugin URI:	http://www.chipbennett.net/wordpress/plugins/cbnet-multi-author-comment-notification/
+ * Description:	Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
+ * Version:		3.0
+ * Author:		chipbennett
+ * Author URI:	http://www.chipbennett.net/
+ * Text Domain:	cbnet-multi-author-comment-notification
+ * Domain Path:	/languages
  *
  * License:       GNU General Public License, v2 (or newer)
  * License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -31,7 +33,7 @@
  * Load Plugin textdomain
  */
 function cbnet_macn_load_textdomain() {
-	load_plugin_textdomain( 'cbnet_macn', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+	load_plugin_textdomain( 'cbnet-multi-author-comment-notification' ); 
 }
 // Load Plugin textdomain
 add_action( 'plugins_loaded', 'cbnet_macn_load_textdomain' );
@@ -81,7 +83,7 @@ function cbnet_macn_get_notification_email_addresses( $type = 'moderation' ) {
 	// Add email addresses for User Roles
 	$moderation_roles = array( 'administrator', 'editor' );
 	$notification_roles = array( 'author', 'contributor', 'subscriber' );
-	$roles = ( 'moderation' == $type ? $moderation_roles : array_merge( $moderation_roles, $notification_roles );
+	$roles = ( 'moderation' == $type ? $moderation_roles : array_merge( $moderation_roles, $notification_roles ) );
 	$role_email_addresses = array();
 	foreach ( $roles as $role ) {
 		if ( true == $cbnet_macn_options['all_' . $role . 's'] ) {

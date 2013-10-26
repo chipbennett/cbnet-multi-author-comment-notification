@@ -41,58 +41,58 @@ function cbnet_macn_get_option_parameters() {
 	$parameters = array(
 		'all_administrators' => array(
 			'name' => 'all_administrators',
-			'title' => __( 'All Administrators', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to all Administrators', 'cbnet_macn' ),
+			'title' => __( 'All Administrators', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to all Administrators', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['all_administrators']
 		),
 		'all_editors' => array(
 			'name' => 'all_editors',
-			'title' => __( 'All Editors', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to all Editors', 'cbnet_macn' ),
+			'title' => __( 'All Editors', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to all Editors', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['all_editors']
 		),
 		'all_authors' => array(
 			'name' => 'all_authors',
-			'title' => __( 'All Authors', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to all Authors', 'cbnet_macn' ),
+			'title' => __( 'All Authors', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to all Authors', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['all_authors']
 		),
 		'all_contributors' => array(
 			'name' => 'all_contributors',
-			'title' => __( 'All Contributors', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to all Contributors', 'cbnet_macn' ),
+			'title' => __( 'All Contributors', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to all Contributors', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['all_contributors']
 		),
 		'all_subscribers' => array(
 			'name' => 'all_subscribers',
-			'title' => __( 'All Subscribers', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to all Subscribers', 'cbnet_macn' ),
+			'title' => __( 'All Subscribers', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to all Subscribers', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['all_subscribers']
 		),
 		'additional_emails' => array(
 			'name' => 'additional_emails',
-			'title' => __( 'Additional Email Addresses', 'cbnet_macn' ),
-			'description' => __( 'Send comment notification emails to these additional email addresses', 'cbnet_macn' ),
+			'title' => __( 'Additional Email Addresses', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to these additional email addresses', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'text',
 			'sanitize' => 'emailarray',
 			'default' => $defaults['additional_emails']
 		),
 		'notify_for_registered_users' => array(
 			'name' => 'notify_for_registered_users',
-			'title' => __( 'Registered-User Comments', 'cbnet_macn' ),
-			'description' => __( 'Send notification emails for comments from registered users', 'cbnet_macn' ),
+			'title' => __( 'Registered-User Comments', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send notification emails for comments from registered users', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['notify_for_registered_users']
 		),
 		'notify_for_comment_moderation' => array(
 			'name' => 'notify_for_comment_moderation',
-			'title' => __( 'Moderated Comment Notification', 'cbnet_macn' ),
-			'description' => __( 'Send notification emails for comments held for moderation', 'cbnet_macn' ),
+			'title' => __( 'Moderated Comment Notification', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send notification emails for comments held for moderation', 'cbnet-multi-author-comment-notification' ),
 			'type' => 'checkbox',
 			'default' => $defaults['notify_for_comment_moderation']
 		),
@@ -116,13 +116,13 @@ function cbnet_macn_register_settings() {
 	/**
 	 * Add settings section to Settings -> Discussion
 	 */
-	add_settings_section( 'cbnet_macn', __( 'cbnet Multi-Author Comment Notification Settings', 'cbnet_macn' ), 'cbnet_macn_settings_section', 'discussion' );	
+	add_settings_section( 'cbnet-multi-author-comment-notification', __( 'cbnet Multi-Author Comment Notification Settings', 'cbnet-multi-author-comment-notification' ), 'cbnet_macn_settings_section', 'discussion' );	
 	
 	/**
 	 * Discussion settings section callback
 	 */
 	function cbnet_macn_settings_section() {
-		echo '<p>' . __( 'Configure cbnet Multi-Author Comment Notification settings here. These settings will only apply if the "Email me whenever" setting is enabled for either comment notification or comment modeation.', 'cbnet_macn' ) . '</p>';
+		echo '<p>' . __( 'Configure cbnet Multi-Author Comment Notification settings here. These settings will only apply if the "Email me whenever" setting is enabled for either comment notification or comment modeation.', 'cbnet-multi-author-comment-notification' ) . '</p>';
 	}
 
 	/**
@@ -131,7 +131,7 @@ function cbnet_macn_register_settings() {
 	* Adds setting fields to 
 	* Settings -> Discussion
 	*/
-	add_settings_field( 'cbnet_macn_user_roles', '<label for="cbnet_macn_user_roles">' . __( 'User Roles' , 'cbnet_macn' ) . '</label>', 'cbnet_macn_settings_field_user_roles', 'discussion', 'cbnet_macn' );
+	add_settings_field( 'cbnet_macn_user_roles', '<label for="cbnet_macn_user_roles">' . __( 'User Roles' , 'cbnet-multi-author-comment-notification' ) . '</label>', 'cbnet_macn_settings_field_user_roles', 'discussion', 'cbnet-multi-author-comment-notification' );
 	
 	/**
 	 * User roles setting fields callback
@@ -166,7 +166,7 @@ function cbnet_macn_register_settings() {
 	* Adds setting field to 
 	* Settings -> Discussion
 	*/
-	add_settings_field( 'cbnet_macn_additional_emails', '<label for="cbnet_macn_additional_emails">' . __( 'Additional Emails' , 'cbnet_macn' ) . '</label>', 'cbnet_macn_settings_field_additional_emails', 'discussion', 'cbnet_macn' );
+	add_settings_field( 'cbnet_macn_additional_emails', '<label for="cbnet_macn_additional_emails">' . __( 'Additional Emails' , 'cbnet-multi-author-comment-notification' ) . '</label>', 'cbnet_macn_settings_field_additional_emails', 'discussion', 'cbnet-multi-author-comment-notification' );
 	
 	/**
 	 * Additional emails setting fields callback
@@ -190,7 +190,7 @@ function cbnet_macn_register_settings() {
 	* Adds setting field to 
 	* Settings -> Discussion
 	*/
-	add_settings_field( 'cbnet_macn_misc', '<label for="cbnet_macn_misc">' . __( 'Miscellaneous' , 'cbnet_macn' ) . '</label>', 'cbnet_macn_settings_field_misc', 'discussion', 'cbnet_macn' );
+	add_settings_field( 'cbnet_macn_misc', '<label for="cbnet_macn_misc">' . __( 'Miscellaneous' , 'cbnet-multi-author-comment-notification' ) . '</label>', 'cbnet_macn_settings_field_misc', 'discussion', 'cbnet-multi-author-comment-notification' );
 	
 	/**
 	 * CAPTCHA image setting fields callback
@@ -291,7 +291,7 @@ function cbnet_macn_validate_settings( $input ) {
 				// Validate Email Array content
 				if ( 'emailarray' == $optiondetails['sanitize'] ) {
 					// Create array
-					if ( false == strpos( $input[$setting], ',' ) ) {
+					if ( ! is_array( $input[$setting] ) && false == strpos( $input[$setting], ',' ) ) {
 						$input_emails = array( $input[$setting] );
 					} else {
 						$input_emails = ( '' != $input[$setting] ? explode( ',', $input[$setting] ) : false );

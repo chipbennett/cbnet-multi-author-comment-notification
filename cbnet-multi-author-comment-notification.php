@@ -3,7 +3,7 @@
  * Plugin Name:	cbnet Multi Author Comment Notification
  * Plugin URI:	http://www.chipbennett.net/wordpress/plugins/cbnet-multi-author-comment-notification/
  * Description:	Send comment notification emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
- * Version:		3.0
+ * Version:		3.1
  * Author:		chipbennett
  * Author URI:	http://www.chipbennett.net/
  * Text Domain:	cbnet-multi-author-comment-notification
@@ -102,6 +102,16 @@ function cbnet_macn_get_notification_email_addresses( $type = 'moderation' ) {
 	// Add additional email addresses
 	if ( false != $cbnet_macn_options['additional_emails'] ) {
 		$email_addresses = array_merge( $email_addresses, $cbnet_macn_options['additional_emails'] );
+	}
+
+	// Remove site admin email addresses
+	$site_admin_email = get_bloginfo( 'admin_email' );
+	if ( false == $cbnet_macn_options['site_admin'] )  {
+		if ( in_array( $site_admin_email, $email_addresses ) ) {
+			unset( $email_addresses[$site_admin_email] );
+		}
+	} else {
+		$email_addresses = array_merge( $email_addresses, $site_admin_email );
 	}
 	
 	// Return array

@@ -21,6 +21,7 @@ function cbnet_macn_get_options() {
  */
 function cbnet_macn_get_option_defaults() {
 	$defaults = array(	
+		'site_admin' => true,
 		'all_administrators' => false,
 		'all_editors' => false,
 		'all_authors' => false,
@@ -39,6 +40,13 @@ function cbnet_macn_get_option_defaults() {
 function cbnet_macn_get_option_parameters() {
 	$defaults = cbnet_macn_get_option_defaults();
 	$parameters = array(
+		'site_admin' => array(
+			'name' => 'site_admin',
+			'title' => __( 'Site Admin', 'cbnet-multi-author-comment-notification' ),
+			'description' => __( 'Send comment notification emails to the site admin email address', 'cbnet-multi-author-comment-notification' ),
+			'type' => 'checkbox',
+			'default' => $defaults['site_admin']
+		),
 		'all_administrators' => array(
 			'name' => 'all_administrators',
 			'title' => __( 'All Administrators', 'cbnet-multi-author-comment-notification' ),
@@ -141,6 +149,9 @@ function cbnet_macn_register_settings() {
 		$option_parameters = cbnet_macn_get_option_parameters();
 		?>
 		<p>
+			<input type="checkbox" name="plugin_cbnet_macn_options[site_admin]" value="true" <?php checked( true == $cbnet_macn_options['site_admin'] ); ?>>
+			<?php echo $option_parameters['site_admin']['description']; ?>
+			<br />
 			<input type="checkbox" name="plugin_cbnet_macn_options[all_administrators]" value="true" <?php checked( true == $cbnet_macn_options['all_administrators'] ); ?>>
 			<?php echo $option_parameters['all_administrators']['description']; ?>
 			<br />
@@ -193,7 +204,7 @@ function cbnet_macn_register_settings() {
 	add_settings_field( 'cbnet_macn_misc', '<label for="cbnet_macn_misc">' . __( 'Miscellaneous' , 'cbnet-multi-author-comment-notification' ) . '</label>', 'cbnet_macn_settings_field_misc', 'discussion', 'cbnet-multi-author-comment-notification' );
 	
 	/**
-	 * CAPTCHA image setting fields callback
+	 * Miscellaneous setting fields callback
 	 */
 	function cbnet_macn_settings_field_misc() {
 		global $cbnet_macn_options;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cbnet Multi-Author Comment Notification\n"
-"POT-Creation-Date: 2013-10-26 10:47-0500\n"
-"PO-Revision-Date: 2013-10-26 10:47-0500\n"
+"POT-Creation-Date: 2014-02-21 19:59-0500\n"
+"PO-Revision-Date: 2014-02-21 19:59-0500\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,75 +13,83 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../settings.php:44
+#: ../settings.php:45
+msgid "Site Admin"
+msgstr "Site Admin"
+
+#: ../settings.php:46
+msgid "Send comment notification emails to the site admin email address"
+msgstr "Send comment notification emails to the site admin email address"
+
+#: ../settings.php:52
 msgid "All Administrators"
 msgstr "All Administrators"
 
-#: ../settings.php:45
+#: ../settings.php:53
 msgid "Send comment notification emails to all Administrators"
 msgstr "Send comment notification emails to all Administrators"
 
-#: ../settings.php:51
+#: ../settings.php:59
 msgid "All Editors"
 msgstr "All Editors"
 
-#: ../settings.php:52
+#: ../settings.php:60
 msgid "Send comment notification emails to all Editors"
 msgstr "Send comment notification emails to all Editors"
 
-#: ../settings.php:58
+#: ../settings.php:66
 msgid "All Authors"
 msgstr "All Authors"
 
-#: ../settings.php:59
+#: ../settings.php:67
 msgid "Send comment notification emails to all Authors"
 msgstr "Send comment notification emails to all Authors"
 
-#: ../settings.php:65
+#: ../settings.php:73
 msgid "All Contributors"
 msgstr "All Contributors"
 
-#: ../settings.php:66
+#: ../settings.php:74
 msgid "Send comment notification emails to all Contributors"
 msgstr "Send comment notification emails to all Contributors"
 
-#: ../settings.php:72
+#: ../settings.php:80
 msgid "All Subscribers"
 msgstr "All Subscribers"
 
-#: ../settings.php:73
+#: ../settings.php:81
 msgid "Send comment notification emails to all Subscribers"
 msgstr "Send comment notification emails to all Subscribers"
 
-#: ../settings.php:79
+#: ../settings.php:87
 msgid "Additional Email Addresses"
 msgstr "Additional Email Addresses"
 
-#: ../settings.php:80
+#: ../settings.php:88
 msgid "Send comment notification emails to these additional email addresses"
 msgstr "Send comment notification emails to these additional email addresses"
 
-#: ../settings.php:87
+#: ../settings.php:95
 msgid "Registered-User Comments"
 msgstr "Registered-User Comments"
 
-#: ../settings.php:88
+#: ../settings.php:96
 msgid "Send notification emails for comments from registered users"
 msgstr "Send notification emails for comments from registered users"
 
-#: ../settings.php:94
+#: ../settings.php:102
 msgid "Moderated Comment Notification"
 msgstr "Moderated Comment Notification"
 
-#: ../settings.php:95
+#: ../settings.php:103
 msgid "Send notification emails for comments held for moderation"
 msgstr "Send notification emails for comments held for moderation"
 
-#: ../settings.php:119
+#: ../settings.php:127
 msgid "cbnet Multi-Author Comment Notification Settings"
 msgstr "cbnet Multi-Author Comment Notification Settings"
 
-#: ../settings.php:125
+#: ../settings.php:133
 msgid ""
 "Configure cbnet Multi-Author Comment Notification settings here. These "
 "settings will only apply if the \"Email me whenever\" setting is enabled for "
@@ -91,15 +99,15 @@ msgstr ""
 "settings will only apply if the \"Email me whenever\" setting is enabled for "
 "either comment notification or comment modeation."
 
-#: ../settings.php:134
+#: ../settings.php:142
 msgid "User Roles"
 msgstr "User Roles"
 
-#: ../settings.php:169
+#: ../settings.php:180
 msgid "Additional Emails"
 msgstr "Additional Emails"
 
-#: ../settings.php:193
+#: ../settings.php:204
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
 

@@ -323,6 +323,10 @@ function cbnet_macn_validate_settings( $input ) {
 			// Set $setting to the default value
 			$valid_input[$setting] = $option_defaults[$setting];
 		}
+		
+		// Delete transients
+		delete_site_transient( 'cbnet_macn_moderation_email_addresses' );
+		delete_site_transient( 'cbnet_macn_notification_email_addresses' );
 	}
 	return $valid_input;		
 

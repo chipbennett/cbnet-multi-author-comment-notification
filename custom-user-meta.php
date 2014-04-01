@@ -36,7 +36,13 @@ function cbent_macn_save_user_meta_data( $user_id ) {
 	if ( !current_user_can( 'edit_user', $user_id ) )
 		return false;
 
+	// Update user meta
 	update_user_meta( $user_id, 'cbnet_macn_comment_notify', ( isset( $_POST['cbnet_macn_comment_notify'] ) ? true : false ) );
+		
+	// Delete transients
+	delete_site_transient( 'cbnet_macn_moderation_email_addresses' );
+	delete_site_transient( 'cbnet_macn_notification_email_addresses' );
+	
 }
 add_action( 'personal_options_update', 'cbent_macn_save_user_meta_data' );
 add_action( 'edit_user_profile_update', 'cbent_macn_save_user_meta_data' );

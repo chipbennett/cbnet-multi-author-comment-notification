@@ -111,7 +111,7 @@ function cbnet_macn_get_notification_email_addresses( $type = 'moderation' ) {
 			unset( $email_addresses[$site_admin_email] );
 		}
 	} else {
-		$email_addresses = array_merge( $email_addresses, $site_admin_email );
+		$email_addresses = array_merge( $email_addresses, array( $site_admin_email ) );
 	}
 	
 	// Return array
@@ -119,7 +119,7 @@ function cbnet_macn_get_notification_email_addresses( $type = 'moderation' ) {
 }
 
 /**
- * Filter array of comment notificaiton email addresses
+ * Filter array of comment notification email addresses
  */
 function cbnet_macn_filter_comment_notification_email_to( $email_to ) {	
 	global $cbnet_macn_options;
@@ -131,7 +131,7 @@ function cbnet_macn_filter_comment_notification_email_to( $email_to ) {
 add_filter( 'comment_notification_recipients', 'cbnet_macn_filter_comment_notification_email_to' );
 
 /**
- * Filter array of moderation notificaiton email addresses
+ * Filter array of moderation notification email addresses
  */
 function cbnet_macn_filter_comment_moderation_email_to( $email_to ) {
 	global $cbnet_macn_options;

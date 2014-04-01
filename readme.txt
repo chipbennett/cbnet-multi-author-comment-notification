@@ -3,7 +3,7 @@ Contributors: chipbennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: cbnet, multi, author, comment, comments, comment notification, notification, notify, admin, administrator, email, maxblogpress
 Requires at least: 3.7
-Tested up to: 3.7
+Tested up to: 3.8.1
 Stable tag: 3.0
 
 Send comment notification and comment moderation emails to multiple users. Select users individually or by user role, or send emails to arbitrary email addresses.
